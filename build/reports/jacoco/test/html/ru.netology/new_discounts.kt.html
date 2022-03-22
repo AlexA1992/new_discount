@@ -4,7 +4,7 @@
 fun getComission (thisTransfer:Long, system:String, isAction:Boolean): Long {
 <span class="pc bpc" id="L5" title="2 of 4 branches missed.">    when (system) {</span>
 <span class="nc" id="L6">        &quot;VkPay&quot; -&gt; commission = 0</span>
-<span class="pc bpc" id="L7" title="3 of 6 branches missed.">        &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; if(thisTransfer &gt; 30000 &amp;&amp; thisTransfer &lt; 7500000 &amp;&amp; isAction == true) commission = 0 else commission =</span>
+<span class="pc bpc" id="L7" title="2 of 6 branches missed.">        &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; if(thisTransfer &gt; 30000 &amp;&amp; thisTransfer &lt; 7500000 &amp;&amp; isAction == true) commission = 0 else commission =</span>
 <span class="fc" id="L8">            (thisTransfer * 0.6 / 100 + 2000).toInt().toLong()</span>
 <span class="nc bnc" id="L9" title="All 2 branches missed.">        &quot;Visa&quot;, &quot;РњР�Р &quot; -&gt; if(thisTransfer * 0.75 / 100 &gt; 3500) commission =</span>
 <span class="nc" id="L10">            (thisTransfer * 0.75 / 100).toInt().toLong() else commission = 3500</span>

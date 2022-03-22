@@ -17,4 +17,16 @@ class New_discountsKtTest {
         val result = getComission(thisTransfer, system, isAction)
         assertEquals(8000, result);
     }
+
+    @Test
+    fun main_Maestro_true() {
+        //arrange
+        val thisTransfer: Long = 1000000
+        val system: String = "Maestro"
+        val isAction: Boolean = true
+
+        //act
+        val result = getComission(thisTransfer, system, isAction)
+        assertEquals(8000, result);
+    }
 }
