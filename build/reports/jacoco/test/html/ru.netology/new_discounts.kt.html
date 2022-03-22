@@ -2,23 +2,23 @@
 
 <span class="nc" id="L3">var commission:Long = 0</span>
 fun getComission (thisTransfer:Long, system:String, isAction:Boolean): Long {
-<span class="fc bfc" id="L5" title="All 4 branches covered.">    when (system) {</span>
-<span class="fc" id="L6">        &quot;VkPay&quot; -&gt; commission = 0</span>
+<span class="pc bpc" id="L5" title="2 of 4 branches missed.">    when (system) {</span>
+<span class="nc" id="L6">        &quot;VkPay&quot; -&gt; commission = 0</span>
 <span class="pc bpc" id="L7" title="3 of 6 branches missed.">        &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; if(thisTransfer &gt; 30000 &amp;&amp; thisTransfer &lt; 7500000 &amp;&amp; isAction == true) commission = 0 else commission =</span>
 <span class="fc" id="L8">            (thisTransfer * 0.6 / 100 + 2000).toInt().toLong()</span>
-<span class="pc bpc" id="L9" title="1 of 2 branches missed.">        &quot;Visa&quot;, &quot;РњР�Р &quot; -&gt; if(thisTransfer * 0.75 / 100 &gt; 3500) commission =</span>
-<span class="pc" id="L10">            (thisTransfer * 0.75 / 100).toInt().toLong() else commission = 3500</span>
+<span class="nc bnc" id="L9" title="All 2 branches missed.">        &quot;Visa&quot;, &quot;РњР�Р &quot; -&gt; if(thisTransfer * 0.75 / 100 &gt; 3500) commission =</span>
+<span class="nc" id="L10">            (thisTransfer * 0.75 / 100).toInt().toLong() else commission = 3500</span>
         }
 <span class="fc" id="L12">    return commission</span>
     }
 
 fun main(){
-<span class="fc" id="L16">    val thisTransfer: Long = 1000000</span>
-<span class="fc" id="L17">    val system: String = &quot;Maestro&quot;</span>
-<span class="fc" id="L18">    val isAction: Boolean = false</span>
-<span class="fc" id="L19">    val commission = getComission(thisTransfer, system, isAction)</span>
+<span class="nc" id="L16">    val thisTransfer: Long = 1000000</span>
+<span class="nc" id="L17">    val system: String = &quot;Maestro&quot;</span>
+<span class="nc" id="L18">    val isAction: Boolean = false</span>
+<span class="nc" id="L19">    val commission = getComission(thisTransfer, system, isAction)</span>
 
-<span class="fc" id="L21">    println(&quot;Р’Р°С€ РїРµСЂРµРІРѕРґ СЃРѕСЃС‚Р°РІРёС‚: $thisTransfer&quot; + &quot; РєРѕРїРµРµРє&quot;)</span>
-<span class="fc" id="L22">    println(&quot;Р’Р°С€Р° РєРѕРјРёСЃСЃРёСЏ СЃРѕСЃС‚Р°РІРёС‚: $commission&quot; + &quot; РєРѕРїРµРµРє&quot;)</span>
-<span class="fc" id="L23">}</span>
+<span class="nc" id="L21">    println(&quot;Р’Р°С€ РїРµСЂРµРІРѕРґ СЃРѕСЃС‚Р°РІРёС‚: $thisTransfer&quot; + &quot; РєРѕРїРµРµРє&quot;)</span>
+<span class="nc" id="L22">    println(&quot;Р’Р°С€Р° РєРѕРјРёСЃСЃРёСЏ СЃРѕСЃС‚Р°РІРёС‚: $commission&quot; + &quot; РєРѕРїРµРµРє&quot;)</span>
+<span class="nc" id="L23">}</span>
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
