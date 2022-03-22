@@ -1,7 +1,7 @@
 package ru.netology
 
 var commission:Long = 0
-fun getComission (thisTransfer:Long, previousTransfer:Long, system:String, isAction:Boolean): Long {
+fun getComission (thisTransfer:Long, system:String, isAction:Boolean): Long {
     when (system) {
         "VkPay" -> commission = 0
         "MasterCard", "Maestro" -> if(thisTransfer > 30000 && thisTransfer < 7500000 && isAction == true) commission = 0 else commission =
@@ -14,10 +14,9 @@ fun getComission (thisTransfer:Long, previousTransfer:Long, system:String, isAct
 
 fun main(){
     val thisTransfer: Long = 1000000
-    val previousTransfer: Long = 0
     val system: String = "Maestro"
     val isAction: Boolean = false
-    val commission = getComission(thisTransfer, previousTransfer, system, isAction)
+    val commission = getComission(thisTransfer, system, isAction)
 
     println("Ваш перевод составит: $thisTransfer" + " копеек")
     println("Ваша комиссия составит: $commission" + " копеек")
